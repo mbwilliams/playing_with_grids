@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1vw;
+}
+
+html {
+  font-family:Avenir,Helvetica,sans-serif;
+  background:#e4e4d5;
+}
+
+h1 {
+  font-size: calc(1.6rem + 1.6vw);
+  text-transform: uppercase;
+  text-align:center;
+  transform: rotate(180deg);
+}
+
+h1::first-letter {
+  color: red;
+}
+
+.pack {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: repeat(4, auto);
+  gap: 5px;
+}
+
+article.domino {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  grid-template-rows: repeat(7, min-content);
+  gap: 5px 5px;
+
+  background-color: white;
+  width: fit-content;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+
+  transform: rotate(0deg);
+  filter: drop-shadow(2px 2px 2px #bebebe);
+}
+
+.separator {
+  grid-column: 1 / 4;
+  grid-row: 4;
+  background: black;
+  height: 3px;
+  border-radius: 10px;
+  margin: 5px 0;
+  align-self: middle;
+}
+
+.center-star {
+  height: 8px;
+  width: 8px;
+  grid-row: 4;
+  grid-column: 2;
+  place-self: center;
+  background-color: gold;
+  border-radius: 50px;
+  background: radial-gradient(closest-side, gold, rgb(192, 165, 12));
+}
+
+.pip {
+  background: radial-gradient(closest-side, #5a5a5a, black);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  text-indent: -9999999px;
+  color: white;
+  text-align: center;
+}
+
+.d-a-side-1 .pip,
+.d-b-side-1 .pip {
+  background: radial-gradient(closest-side, #ff8f8f, rgb(201, 15, 15));
+}
+
+.d-a-side-2 .pip,
+.d-b-side-2 .pip {
+  background: radial-gradient(closest-side, #ffcb8f, rgb(233, 114, 16));
+}
+
+.d-a-side-3 .pip,
+.d-b-side-3 .pip {
+  background: radial-gradient(closest-side, #fffd8f, rgb(204, 184, 9));
+}
+
+.d-a-side-4 .pip,
+.d-b-side-4 .pip {
+  background: radial-gradient(closest-side, #5bee63, rgb(13, 112, 4));
+}
+
+
+.d-a-side-5 .pip,
+.d-b-side-5 .pip {
+  background: radial-gradient(closest-side, #9694f1, rgb(2, 62, 172));
+}
+
+/* Define pip positions on the domino grid */
+/* a-side pips */
+.pip-01 { grid-row: 1; grid-column: 1; }
+.pip-02 { grid-row: 1; grid-column: 2; }
+.pip-03 { grid-row: 1; grid-column: 3; }
+.pip-04 { grid-row: 2; grid-column: 1; }
+.pip-05 { grid-row: 2; grid-column: 2; }
+.pip-06 { grid-row: 2; grid-column: 3; }
+.pip-07 { grid-row: 3; grid-column: 1; }
+.pip-08 { grid-row: 3; grid-column: 2; }
+.pip-09 { grid-row: 3; grid-column: 3; }
+/* b-side pips */
+.pip-10 { grid-row: 5; grid-column: 1; }
+.pip-11 { grid-row: 5; grid-column: 2; }
+.pip-12 { grid-row: 5; grid-column: 3; }
+.pip-13 { grid-row: 6; grid-column: 1; }
+.pip-14 { grid-row: 6; grid-column: 2; }
+.pip-15 { grid-row: 6; grid-column: 3; }
+.pip-16 { grid-row: 7; grid-column: 1; }
+.pip-17 { grid-row: 7; grid-column: 2; }
+.pip-18 { grid-row: 7; grid-column: 3; }
+
+
+/* Define dominoes */
+
+/* generic pip hider */
+.pip-hidden { opacity: 0 }
+
+
+#d0_0 .pip { opacity: 0 }
+
+#d0_1 .pip.a-side,
+#d0_1 .pip.b-side.col-01,
+#d0_1 .pip.b-side.col-03,
+#d0_1 .pip.b-side.row-05,
+#d0_1 .pip.b-side.row-07
+{ opacity: 0 }
+
+#d0_2 .pip.a-side,
+#d0_2 .pip.b-side.col-02,
+#d0_2 .pip.b-side.row-06,
+#d0_2 .pip.b-side.row-05.col-03,
+#d0_2 .pip.b-side.row-07.col-01
+{ opacity: 0 }
+
+#d0_3 .pip.a-side,
+#d0_3 .pip.b-side.row-05.col-02,
+#d0_3 .pip.b-side.row-05.col-03,
+#d0_3 .pip.b-side.row-06.col-01,
+#d0_3 .pip.b-side.row-06.col-03,
+#d0_3 .pip.b-side.row-07.col-01,
+#d0_3 .pip.b-side.row-07.col-02
+{ opacity: 0 }
+
+#d0_4 .pip.a-side,
+#d0_4 .pip.b-side.row-06,
+#d0_4 .pip.b-side.col-02
+{ opacity: 0 }
+
+#d0_5 .pip.a-side,
+#d0_5 .pip.b-side.row-05.col-02,
+#d0_5 .pip.b-side.row-06.col-01,
+#d0_5 .pip.b-side.row-06.col-03,
+#d0_5 .pip.b-side.row-07.col-02
+{ opacity: 0 }
+
+#d0_6 .pip.a-side,
+#d0_6 .pip.b-side.col-02
+{ opacity: 0 }
+
+/* fill in remaining dominoes */
