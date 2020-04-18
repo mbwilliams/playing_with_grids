@@ -19,9 +19,9 @@ h1 {
 
 article {
   display: grid;
-  grid-template-columns: repeat(50, 2.5vw);
-  grid-template-rows: repeat(50, 2.5vw);
-  gap: 1px;
+  grid-template-columns: repeat(50, 1.8vmax);
+  grid-template-rows: repeat(26, 1.8vmax);
+  gap: 0.1vmax;
   padding: 10px;
   background-color: darksalmon;
 }
@@ -34,8 +34,8 @@ article span {
 }
 
 article span:nth-child(1) {
-  grid-row: 5 / 9;
-  grid-column: 8 / 10;
+  grid-row: 12 / 16;
+  grid-column: 25 / 27;
 }
 
 article span:nth-child(2) {
@@ -49,7 +49,7 @@ article span:nth-child(3) {
 }
 
 article span:nth-child(4) {
-  grid-row:  4 / 8;
+  grid-row:  5 / 9;
   grid-column: 2 / 4 ;
 }
 
