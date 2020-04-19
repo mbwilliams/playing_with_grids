@@ -8,17 +8,22 @@ body {
 
 html {
   font-family:Avenir,Helvetica,sans-serif;
-  background:#fceaae;
+  background:#f7e4a8;
 }
 
-h1 {
+.name {
   font-size: calc(1.6rem + 1.6vw);
   text-transform: uppercase;
   text-align:center;
-  transform: rotate(180deg);
+  letter-spacing: 0.9vw;
+  font-weight: 500;
 }
 
-h1::first-letter {
+.name span:nth-child(3) {
+  color: #06d610;
+}
+
+.name::first-letter {
   color: red;
 }
 
@@ -35,18 +40,15 @@ article.domino {
   grid-template-rows: repeat(7, min-content);
   gap: 5px 5px;
 
-  background-color: #fffff0;
-  width: fit-content;
+  /* background-color: #fffff0; */
+  background: linear-gradient(50deg,#f5f5d6,#fffff0);
+  width: min-content;
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
 
   transform: rotate(0deg);
   filter: drop-shadow(2px 2px 2px #bebebe);
-}
-
-#d0_3 {
-  transform: rotate(9deg);
 }
 
 .separator {
@@ -106,8 +108,6 @@ article.domino {
   background: radial-gradient(closest-side, #9694f1, rgb(2, 62, 172));
 }
 
-
-
 /* Define pip positions on the domino grid */
 /* a-side pips */
 .pip-01 { grid-row: 1; grid-column: 1; }
@@ -135,7 +135,6 @@ article.domino {
 
 /* generic pip hider */
 .pip-hidden { opacity: 0 }
-
 
 #d0_0 .pip { opacity: 0 }
 
@@ -204,4 +203,87 @@ article.domino {
 { opacity: 0 }
 #d2_4 .a-side.pip-01, #d2_4 .a-side.pip-09 { opacity: 100 }
 
-/* fill in remaining dominoes */
+
+#d2_5 .pip.a-side { opacity: 0 }
+#d2_5 .a-side.pip-01, #d2_5 .a-side.pip-09 { opacity: 100 }
+#d2_5 .pip-11,
+#d2_5 .pip-13,
+#d2_5 .pip-15,
+#d2_5 .pip-17
+{ opacity: 0 }
+
+#d2_6 .pip.a-side, #d2_6 .pip.b-side.col-02 { opacity: 0 }
+#d2_6 .a-side.pip-01, #d2_6 .a-side.pip-09 { opacity: 100 }
+
+#d3_3 .pip { opacity: 0 }
+#d3_3 .pip-01, #d3_3 .pip-05, #d3_3 .pip-09,
+#d3_3 .pip-10, #d3_3 .pip-14, #d3_3 .pip-18
+{ opacity: 100 }
+
+#d3_4 .pip.a-side,
+#d3_4 .pip.b-side.row-06,
+#d3_4 .pip.b-side.col-02
+{ opacity: 0 }
+#d3_4 .a-side.pip-01, #d3_4 .a-side.pip-05, #d3_4 .a-side.pip-09
+{ opacity: 100 }
+
+#d3_5 .pip-02,
+#d3_5 .pip-03,
+#d3_5 .pip-04,
+#d3_5 .pip-06,
+#d3_5 .pip-07,
+#d3_5 .pip-08
+{ opacity: 0 }
+
+#d3_5 .pip-11,
+#d3_5 .pip-13,
+#d3_5 .pip-15,
+#d3_5 .pip-17
+{ opacity: 0 }
+
+#d3_6 .pip-02,
+#d3_6 .pip-03,
+#d3_6 .pip-04,
+#d3_6 .pip-06,
+#d3_6 .pip-07,
+#d3_6 .pip-08
+{ opacity: 0 }
+
+#d3_6 .b-side.pip.col-02
+{ opacity: 0 }
+
+#d4_4 .pip.col-02,
+#d4_4 .pip.row-02,
+#d4_4 .pip.row-06
+{ opacity: 0 }
+
+#d4_5 .pip.col-02,
+#d4_5 .pip.row-02,
+#d4_5 .pip.row-06
+{ opacity: 0 }
+
+#d4_5 .b-side.pip-14
+{ opacity: 100 }
+
+#d4_6 .pip.col-02,
+#d4_6 .pip.row-02
+{ opacity: 0 }
+
+#d5_5 .pip-02,
+#d5_5 .pip-04,
+#d5_5 .pip-06,
+#d5_5 .pip-08,
+#d5_5 .pip-11,
+#d5_5 .pip-13,
+#d5_5 .pip-15,
+#d5_5 .pip-17
+{ opacity: 0 }
+
+#d5_6 .pip-02,
+#d5_6 .pip-04,
+#d5_6 .pip-06,
+#d5_6 .pip-08,
+#d5_6 .b-side.pip.pip.col-02
+{ opacity: 0 }
+
+#d6_6 .pip.col-02 { opacity: 0 }
